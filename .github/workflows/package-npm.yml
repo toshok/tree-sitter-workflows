@@ -89,7 +89,7 @@ jobs:
           cache: npm
           node-version: ${{inputs.node-version}}
       - name: Install dependencies
-        run: npm i --omit peer --omit optional --ignore-scripts
+        run: npm i --omit peer --omit optional
       - name: Regenerate parser
         if: ${{inputs.generate}}
         shell: bash
