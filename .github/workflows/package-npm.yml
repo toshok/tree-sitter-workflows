@@ -74,6 +74,7 @@ jobs:
     name: Build NodeJS binaries on ${{matrix.os}}
     runs-on: ${{matrix.os}}
     strategy:
+      fail-fast: false
       matrix:
         os:
           - "ubuntu-${{inputs.ubuntu-version}}"
