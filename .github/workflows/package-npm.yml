@@ -102,11 +102,7 @@ jobs:
           done < <(find . -name grammar.js -not -path './node_modules/*' -not -path './.build/*')
       - name: Build x64 binary
         run: |
-          if [ "$RUNNER_OS" == "Linux" ]; then
-            npx -y prebuildify-cross@5.1.1 -i linux-x64 --arch x64 --target 20.9.0
-          else
-            npm x -- prebuildify --arch x64 --target 20.9.0
-          fi
+          npm x -- prebuildify --arch x64 --target 20.9.0
       - name: Build arm64 binary
         run: |
           if [ "$RUNNER_OS" == "Linux" ]; then
